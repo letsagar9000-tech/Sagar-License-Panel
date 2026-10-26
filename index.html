@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagar License Panel</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#07111f;color:#edf4ff;font-family:Arial,sans-serif;padding:20px}
+.card{max-width:480px;margin:30px auto;padding:24px;background:#101e31;border:1px solid #26749a;border-radius:22px;box-shadow:0 0 30px #087da533}
+.logo{text-align:center;font-size:42px;color:#28c8ff}
+h1{text-align:center;font-size:28px}
+.sub{text-align:center;color:#6fa8ff;margin-bottom:30px}
+label{display:block;margin:16px 0 8px}
+input{width:100%;padding:15px;background:#1b2940;color:white;border:1px solid #347da5;border-radius:10px;font-size:16px}
+button{width:100%;padding:15px;margin-top:18px;border:0;border-radius:12px;background:linear-gradient(100deg,#20c5ee,#3976ff);color:white;font-weight:bold;font-size:16px}
+.note{text-align:center;color:#aab8d2;font-size:13px;margin-top:25px}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="logo">♢</div>
+<h1>SAGAR LICENSE PANEL</h1>
+<div class="sub">SECURE KEY MANAGEMENT PORTAL</div>
+<label>Username</label>
+<input id="username" placeholder="Enter your username" autocomplete="username">
+<label>Password</label>
+<input id="password" type="password" placeholder="Enter your password" autocomplete="current-password">
+<button onclick="login()">LOGIN →</button>
+<div id="message"></div>
+<div class="note">Protected License Management Portal</div>
+</div>
+<script>
+function login(){
+document.getElementById('message').style.color='#ff9aa9';
+document.getElementById('message').style.textAlign='center';
+document.getElementById('message').style.marginTop='18px';
+document.getElementById('message').textContent='Login backend setup is required.';
+}
+</script>
+</body>
+</html>
