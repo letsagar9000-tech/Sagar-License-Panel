@@ -1,42 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sagar License Panel</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#07111f;color:#edf4ff;font-family:Arial,sans-serif;padding:20px}
-.card{max-width:480px;margin:30px auto;padding:24px;background:#101e31;border:1px solid #26749a;border-radius:22px;box-shadow:0 0 30px #087da533}
-.logo{text-align:center;font-size:42px;color:#28c8ff}
-h1{text-align:center;font-size:28px}
-.sub{text-align:center;color:#6fa8ff;margin-bottom:30px}
-label{display:block;margin:16px 0 8px}
-input{width:100%;padding:15px;background:#1b2940;color:white;border:1px solid #347da5;border-radius:10px;font-size:16px}
-button{width:100%;padding:15px;margin-top:18px;border:0;border-radius:12px;background:linear-gradient(100deg,#20c5ee,#3976ff);color:white;font-weight:bold;font-size:16px}
-.note{text-align:center;color:#aab8d2;font-size:13px;margin-top:25px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sagar License Panel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top, #10264d, #050914 60%);
+}
+.login-box {
+  width: 100%;
+  max-width: 390px;
+  padding: 32px 25px;
+  border: 1px solid #1768ff;
+  border-radius: 18px;
+  background: rgba(5, 14, 31, 0.96);
+  box-shadow: 0 0 30px rgba(23, 104, 255, 0.25);
+}
+.logo {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+h1 {
+  text-align: center;
+  font-size: 25px;
+  color: #48a5ff;
+  margin-bottom: 8px;
+}
+.subtitle {
+  text-align: center;
+  color: #a8b7d3;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 13px;
+  color: #d8e6ff;
+}
+input, select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #243e67;
+  border-radius: 9px;
+  outline: none;
+  color: white;
+  background: #0b1730;
+  font-size: 15px;
+}
+input:focus, select:focus {
+  border-color: #398bff;
+  box-shadow: 0 0 8px rgba(57, 139, 255, 0.25);
+}
+select option {
+  background: #0b1730;
+}
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #1265ff, #00aaff);
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+#message {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffb7b7;
+}
+.footer {
+  text-align: center;
+  color: #7185a7;
+  font-size: 11px;
+  margin-top: 25px;
+}
+  </style>
 </head>
 <body>
-<div class="card">
-<div class="logo">♢</div>
-<h1>SAGAR LICENSE PANEL</h1>
-<div class="sub">SECURE KEY MANAGEMENT PORTAL</div>
-<label>Username</label>
-<input id="username" placeholder="Enter your username" autocomplete="username">
-<label>Password</label>
-<input id="password" type="password" placeholder="Enter your password" autocomplete="current-password">
-<button onclick="login()">LOGIN →</button>
-<div id="message"></div>
-<div class="note">Protected License Management Portal</div>
-</div>
-<script>
-function login(){
-document.getElementById('message').style.color='#ff9aa9';
-document.getElementById('message').style.textAlign='center';
-document.getElementById('message').style.marginTop='18px';
-document.getElementById('message').textContent='Login backend setup is required.';
-}
-</script>
+  <main class="login-box">
+    <div class="logo">🔐</div>
+    <h1>SAGAR LICENSE</h1>
+    <p class="subtitle">Secure License Management Panel</p>
+<form id="loginForm">
+  <label for="role">Account Type</label>
+  <select id="role" required>
+    <option value="seller">Seller Login</option>
+    <option value="admin">Admin Login</option>
+  </select>
+  <label for="username">Username</label>
+  <input id="username" type="text" placeholder="Enter username"
+    autocomplete="username" required>
+  <label for="password">Password</label>
+  <input id="password" type="password" placeholder="Enter password"
+    autocomplete="current-password" required>
+  <button type="submit">LOGIN SECURELY</button>
+  <p id="message" role="status"></p>
+</form>
+<div class="footer">© 2026 Sagar License Panel</div>
+  </main>
+  <script>
+    const form = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const role = document.getElementById("role").value;
+      message.style.color = "#ffb7b7";
+      message.textContent = "Login backend is not connected yet.";
+      // Real authentication will be connected to the backend later.
+    });
+  </script>
 </body>
 </html>
