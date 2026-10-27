@@ -22,23 +22,21 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/health", async (req, res) => {
+  if (!pool) {
+    return res.status(503).json({
+      success: false,
+      message: "Database is not configured"
+    });
+  }
+
   try {
-    if (!pool) {
-      return res.status(503).json({
-        success: false,
-        message: "Database is not configured"
-      });
-    }
-
     await pool.query("SELECT 1");
-
     res.json({
       success: true,
       message: "API and database are connected"
     });
   } catch (error) {
     console.error("Database connection failed:", error.message);
-
     res.status(503).json({
       success: false,
       message: "Database connection failed"
