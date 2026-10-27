@@ -1,5 +1,5 @@
 {
-  "name": "sagar-license-panel",
+    "name": "sagar-license-panel",
   "version": "1.0.0",
   "description": "Sagar License Panel backend",
   "main": "server.js",
